@@ -14,8 +14,7 @@ public class HomeController {
 
     private MessageListService messageListService;
 
-    public HomeController(MessageListService messageListService) {
-        this.messageListService = messageListService;
+    public HomeController(MessageListService messageListService) { this.messageListService = messageListService;
     }
 
     @GetMapping("/home")
