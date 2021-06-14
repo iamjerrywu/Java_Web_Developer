@@ -2,6 +2,8 @@ package com.example.seckill_mybatis_reverse_engineering.db.mappers;
 
 import com.example.seckill_mybatis_reverse_engineering.db.po.SeckillActivity;
 
+import java.util.List;
+
 public interface SeckillActivityMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,12 @@ public interface SeckillActivityMapper {
     int updateByPrimaryKeySelective(SeckillActivity record);
 
     int updateByPrimaryKey(SeckillActivity record);
+
+    List<SeckillActivity> querySeckillActivitysByStatus(int activityStatus);
+
+    int lockStock(Long seckillActivityId);
+
+    int deductStock(Long seckillActivityId);
+
+    void revertStock(Long seckillActivityId);
 }
