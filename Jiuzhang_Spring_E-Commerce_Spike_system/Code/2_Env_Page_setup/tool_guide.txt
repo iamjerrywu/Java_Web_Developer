@@ -1,0 +1,14 @@
+execute redis:
+redis-server /usr/local/etc/redis.conf
+
+
+
+
+execute rocketMQ:
+in /Applications/rocketmq-all-4.9.0-source-release/distribution/target/rocketmq-4.9.0/rocketmq-4.9.0
+
+activate server:
+sh bin/mqnamesrv &
+
+activate broker:
+nohup sh bin/mqbroker -n localhost:9876 &
